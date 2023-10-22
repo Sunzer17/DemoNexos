@@ -6,15 +6,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class TransactionRequest implements Process {
-	
-	
+
 	@NotNull(message = "cardId is required")
-	@Pattern(regexp = "\\d{16}",message = "cardId is not valid")
+	@Pattern(regexp = "\\d{16}", message = "cardId is not valid")
 	private String cardId;
-	
+
 	@NotNull(message = "price is required")
-	@Min(value = 1,message = "the value should not be less than 1$")
-	@Max(value = 20000,message = "the value should not be more than $20000")
+	@Min(value = 1, message = "the value should not be less than 1$")
+	@Max(value = 20000, message = "the value should not be more than $20000")
 	private Double price;
 
 	public String getCardId() {
@@ -32,7 +31,11 @@ public class TransactionRequest implements Process {
 	public void setPrice(Double price) {
 		this.price = price;
 	}
-	
-	
+
+	public TransactionRequest(String cardId, Double price) {
+		super();
+		this.cardId = cardId;
+		this.price = price;
+	}
 
 }

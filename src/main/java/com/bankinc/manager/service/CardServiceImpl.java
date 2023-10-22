@@ -23,7 +23,6 @@ public class CardServiceImpl implements CardService {
 	@Override
 	public String createCard(String productId) {
 		Card card = new Card(generateCardNumber(productId), calculateExpirationDate());
-		System.out.println(card.getCardNumber());
 		return cardRepository.save(card).getCardNumber();
 	}
 

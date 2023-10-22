@@ -32,6 +32,11 @@ public class CardRecharge implements Process {
 		this.balance = balance;
 	}
 
+	public CardRecharge(String cardId, Double balance) {
+		this.cardId = cardId;
+		this.balance = balance;
+	}
+
 	
 
 	

@@ -4,13 +4,13 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class CardActivation implements Process {
-	
+
 	@NotNull(message = "cardId is required")
-	@Pattern(regexp = "\\d{16}",message = "cardId is not valid")
+	@Pattern(regexp = "\\d{16}", message = "cardId is not valid")
 	private String cardId;
-	
+
 	@NotNull(message = "cardHolderName is required")
-	@Pattern(regexp = "^[A-Za-z]+ [A-Za-z]+$",message = "Card Holder name is not valid")		   
+	@Pattern(regexp = "^[A-Za-z]+ [A-Za-z]+$", message = "Card Holder name is not valid")
 	private String cardHolderName;
 
 	public String getCardId() {
@@ -28,8 +28,10 @@ public class CardActivation implements Process {
 	public void setCardHolderName(String cardHolderName) {
 		this.cardHolderName = cardHolderName;
 	}
-	
-	
-	
+
+	public CardActivation(String cardId, String cardHolderName) {
+		this.cardId = cardId;
+		this.cardHolderName = cardHolderName;
+	}
 
 }

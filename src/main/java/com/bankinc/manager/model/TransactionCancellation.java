@@ -29,4 +29,10 @@ public class TransactionCancellation implements Process {
 		this.transactionId = transactionId;
 	}
 
+	public TransactionCancellation(String cardId, String transactionId) {
+		super();
+		this.cardId = cardId;
+		this.transactionId = transactionId;
+	}
+
 }
